@@ -1,17 +1,19 @@
-VH 4 July 2022
+# Script for iterating the IC tool for multiple input points
 
-InterfaceCatchment analysis for STYLE-project walkability analysis.
+Purpose: InterfaceCatchment analysis for STYLE-project walkability analysis.
+Author: VH 4 July 2022 / updated 11 Jan 2023
 
-The tool was run with default settings: 400m walkable distance, no dead-end removal.
+## Details of the latest run:
 
-Folders:
+- Final analysis was coducted using QGIS via CSC Puhti.
+- Run settings: 300m walkable distance, no dead-end removal.
+- Final analysis was conducted for 1578 starting points in the city centre, and 1014 starting points in the Kaarela suburb
+
+## Contents
 --------
 
-IC 			- original IC tool forked from https://github.com/Awapic/IC
-IC_inputs 		- Input files used in the analysis, modified from Maija's files in here:  T:\STYLE\Paper 4\Walkability index\Kortteleiden huokoisuus ja saavutettava julkisivu\IC 
-	 		- Re-projected all input data to EPSG:3067 prior to analysis, and split input point files into multiple files in order to run in subsets.
-
+IC_inputs 		- Input files used in the analysis (input points, blocks layer) in  EPSG:3067.
 IC_results 		- Result files
-IC_script_drafts	- Older script drafts /testing
-iciterator.py		- This file contains the IC analysis in function run() -modified from original so that references to GUI were removed by removing all references to 'self'. Function returns the IC value.
-import_iterate.py 	- This file imports iciterator and handles the input filepaths and final result file writing. There are two versions; one that uses pandas for output file (used locally), and one that uses pure python (used in CSC)
+IC_script_drafts	- Older script versions /testing
+icsimple.py		- This file contains the IC analysis in function run() -modified from original so that references to GUI were removed by removing all references to 'self'. Function returns the IC value.
+icsetup.py	 	- This file imports the icsimple tool run-function and handles the input filepaths and final result file writing. There are two versions; one that uses pandas for output file (used locally), and one that uses pure python (used in CSC)
